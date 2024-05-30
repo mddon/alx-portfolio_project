@@ -1,0 +1,750 @@
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+section {
+    padding: 20px;
+}
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+p {
+    margin-bottom: 20px;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+
+<!--student_manager-->
+.student-manager-content {
+    padding: 20px;
+}
+
+.student-manager-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.student-manager-container h2,
+.student-manager-container h3 {
+    color: #343a40;
+}
+
+.student-manager-container h3 {
+    margin-top: 20px;
+}
+
+.student-manager-input,
+.student-manager-button {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.student-manager-button {
+    cursor: pointer;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.student-manager-button:hover {
+    background-color: #138496;
+}
+
+.student-manager-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.student-manager-table th,
+.student-manager-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 12px;
+}
+
+.student-manager-table th {
+    background-color: #007bff;
+    color: white;
+}
+
+.student-manager-table td {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+.student-manager-table tr:nth-child(even) td {
+    background-color: #e2e6ea;
+}
+
+.student-manager-error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .student-manager-container {
+        padding: 10px;
+    }
+    .student-manager-table,
+    .student-manager-table th,
+    .student-manager-table td {
+        display: block;
+        width: 100%;
+    }
+    .student-manager-table th,
+    .student-manager-table td {
+        box-sizing: border-box;
+        width: 100%;
+        display: block;
+        text-align: left;
+    }
+    .student-manager-table th {
+        background-color: #007bff;
+        color: white;
+    }
+}
+
+
+<!--admission-->
+.admission-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 20px auto; /* Center the container horizontally */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Ensure the container doesn’t exceed the screen width */
+}
+
+.admission-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading text */
+}
+
+.admission-table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin: 20px auto; /* Center the table horizontally */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admission-table thead {
+    background-color: #007BFF;
+    color: white;
+}
+
+.admission-table th,
+.admission-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.admission-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.admission-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    .admission-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .admission-table th,
+    .admission-table td {
+        padding: 8px 10px;
+    }
+}
+
+
+<!--sign-up_styles-->
+body.signup-page {
+    font-family: Arial, sans-serif;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.signup-container {
+    background-color: white;
+    color: black;
+    padding: 50px 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.signup-container input,
+.signup-container button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.signup-container button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-container nav a {
+    color: #0056b3;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+
+<!--login-styles-->
+/* Login Page Styles */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    color: white;
+    background-color: #007BFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.login-container .login-error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 10px;
+    }
+    .login-container h1 {
+        font-size: 24px;
+    }
+    .login-container form {
+        width: 100%;
+        padding: 10px;
+    }
+    .login-container input {
+        padding: 8px;
+    }
+    .login-container button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+
+
+<!--services-page-->
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.services-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.services-container h1 {
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.course {
+    width: 45%;
+    margin: 10px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.course h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.course p {
+    color: #555;
+}
+
+.course p strong {
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .course {
+        width: 100%;
+    }
+}
+
+footer {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+<!--about-page-->
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.about-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.about-container h1 {
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.about-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    text-align: left;
+}
+
+.mission-vision {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.mission, .vision {
+    width: 45%;
+}
+
+.mission h2, .vision h2, .core-values h2, .about-details h2 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.core-values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.core-values li {
+    background-color: #f9f9f9;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-details p {
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .mission-vision {
+        flex-direction: column;
+    }
+
+    .mission, .vision {
+        width: 100%;
+    }
+}
+
+footer {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+<!--index-page-->
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background: url('https://img.freepik.com/free-photo/african-kid-studying-school_181624-24344.jpg') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.btn-primary, .btn-secondary {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.btn-secondary {
+    background-color: #0056b3;
+}
+
+.about-home, .services-home, .testimonials, .cta {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about-home p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.service-item h3 {
+    color: #007BFF;
+    margin-top: 0;
+}
+
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.testimonial-item h4 {
+    color: #0056b3;
+    margin-top: 10px;
+}
+
+.cta {
+    background-color: #007BFF;
+    color: white;
+    padding: 50px 20px;
+}
+
+.cta p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1.2em;
+    }
+
+    .service-item, .testimonial-item {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #007bff;
+    color: blue;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Ensure relative positioning for footer */
+    min-height: 100vh; /* Ensure footer stays at the bottom of the viewport */
+}
+
+.header-contact {
+    background-color: #125dad94;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.header-contact .phone-number {
+    font-size: 14px;
+}
+.header-contact .social-icons a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 18px;
+}
+
+nav {
+    background-color: #0056b3;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    border-radius: 5px;
+    display: inline-block;
+}
+nav a:hover {
+    background-color: #003d82;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+<!--Contact-page-->
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.contact {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info h3 {
+    color: #0056b3;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+@media (min-width: 600px) {
+    .contact-info {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}

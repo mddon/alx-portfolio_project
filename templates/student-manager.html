@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Student Manager - Mimz Academy{% endblock %}
+
+{% block content %}
+<div class="content student-manager-content">
+    <div class="student-manager-container">
+        <h2>Student Manager</h2>
+        <h3>Create, View, Edit and Delete student records</h3>
+
+        <div id="errorMessage" class="student-manager-error"></div>
+        <h3>Add Student</h3>
+        <input type="text" id="name" class="student-manager-input" placeholder="Name">
+        <input type="text" id="department" class="student-manager-input" placeholder="Department">
+        <input type="number" id="age" class="student-manager-input" placeholder="Age">
+        <button onclick="addStudent()" class="student-manager-button">Add Student</button>
+
+        <h2>All Students</h2>
+        <table id="studentTable" class="student-manager-table">
+            <thead>
+                <tr>
+                    <th>Registration Number</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="studentList"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+{% endblock %}

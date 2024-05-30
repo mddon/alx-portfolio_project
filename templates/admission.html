@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Admission - Mimz Academy{% endblock %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='admission_styles.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="admission-container">
+    <h2>Prospective Students</h2>
+    <table class="admission-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Surname</th>
+                <th>Other Names</th>
+                <th>Email</th>
+                <th>Academic Level</th>
+                <th>Date of Birth</th>
+                <th>Guardian Name</th>
+                <th>Guardian Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in prospective_students %}
+            <tr>
+                <td>{{ student.id }}</td>
+                <td>{{ student.surname }}</td>
+                <td>{{ student.other_names }}</td>
+                <td>{{ student.email }}</td>
+                <td>{{ student.academic }}</td>
+                <td>{{ student.date_of_birth }}</td>
+                <td>{{ student.guardian_name }}</td>
+                <td>{{ student.guardian_phone }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+{% endblock %}

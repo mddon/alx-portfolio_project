@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Signup - Mimz Academy{% endblock %}
+
+{% block body_class %}signup-page{% endblock %}
+
+{% block content %}
+<div class="signup-container">
+    <h1>Sign Up</h1>
+    <form method="POST">
+        <input type="text" name="surname" placeholder="Surname" required>
+        <input type="text" name="other_names" placeholder="Other Names">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="text" name="academic_level" placeholder="Academic Level" required>
+        <input type="date" name="date_of_birth" placeholder="Date of Birth" required>
+        <input type="text" name="guardian_name" placeholder="Guardian's Name" required>
+        <input type="text" name="guardian_phone" placeholder="Guardian's Phone No." required>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+{% endblock %}

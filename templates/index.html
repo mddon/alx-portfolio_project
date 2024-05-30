@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home-Mimz Academy{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+    </style>
+</head>
+<body>
+    <header class="header-contact">
+        <div class="phone-number">Tel: +234 123 456 789 | info@mimzacademy.com</div>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://telegram.org" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+    </header>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for("about") }}">About</a>
+        <a href="{{ url_for('services') }}">Services</a>        
+        <a href="{{ url_for('contact') }}">Contact</a>
+        <a href="{{ url_for('signup') }}" target="_blank">Sign-up</a>
+        {% if 'username' in session %}
+            <a href="{{ url_for('admission') }}">Admission</a>
+            <a href="{{ url_for('student_manager') }}">Student Manager</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Admin</a>
+        {% endif %}
+    </nav>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Mimz Academy</h1>
+        <p>Empowering Minds, Building Futures...</p>
+        <a href="{{ url_for('signup') }}" class="btn-primary">Get Started</a>
+    </div>
+</section>
+
+<section class="about-home">
+    <h2>About Mimz Academy</h2>
+    <p>Mimz Academy is a leading tech organization dedicated to providing quality education and solutions to meet all client needs. Our customer-centric approach ensures that we understand and address the unique challenges faced by our clients, delivering tailored solutions that drive success. We are operational in Nigeria, with offices in Lagos, Abuja, and Port Harcourt, but we serve clients all over the world. Our team of expert tutors is committed to fostering a culture of lifelong learning, creativity, and critical thinking.</p>
+    <a href="{{ url_for('about') }}" class="btn-secondary">Learn More</a>
+</section>
+
+<section class="services-home">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+        <div class="service-item">
+            <h3>Frontend Engineering</h3>
+            <p>Learn the art of crafting visually stunning and responsive user interfaces.</p>
+            <p><strong>Cost:</strong> $2,000 | <strong>Duration:</strong> 6 months</p>
+        </div>
+        <div class="service-item">
+            <h3>Backend Engineering</h3>
+            <p>Master server-side development to build robust and scalable applications.</p>
+            <p><strong>Cost:</strong> $2,500 | <strong>Duration:</strong> 6 months</p>
+        </div>
+        <div class="service-item">
+            <h3>Full Stack Software Engineering</h3>
+            <p>Become proficient in both frontend and backend development.</p>
+            <p><strong>Cost:</strong> $4,000 | <strong>Duration:</strong> 12 months</p>
+        </div>
+        <div class="service-item">
+            <h3>Data Science</h3>
+            <p>Analyze and interpret complex data to drive decision-making.</p>
+            <p><strong>Cost:</strong> $3,000 | <strong>Duration:</strong> 9 months</p>
+        </div>
+        <div class="service-item">
+            <h3>Mobile App Development</h3>
+            <p>Build innovative and user-friendly mobile applications for various platforms.</p>
+            <p><strong>Cost:</strong> $2,500 | <strong>Duration:</strong> 6 months</p>
+        </div>
+        <div class="service-item">
+            <h3>Cybersecurity</h3>
+            <p>Learn to protect systems and networks from digital attacks.</p>
+            <p><strong>Cost:</strong> $3,000 | <strong>Duration:</strong> 9 months</p>
+        </div>
+    </div>
+    <a href="{{ url_for('services') }}" class="btn-secondary">Explore All Services</a>
+</section>
+
+<section class="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-item">
+            <p>"Mimz Academy has been a transformative experience for me. The instructors are top-notch and the curriculum is very comprehensive."</p>
+            <h4>John Doe</h4>
+        </div>
+        <div class="testimonial-item">
+            <p>"Thanks to Mimz Academy, I now have a thriving career in data science. Their hands-on approach to teaching is unparalleled."</p>
+            <h4>Jane Smith</h4>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Ready to Start Your Journey?</h2>
+    <p>Join Mimz Academy today and unlock your potential with our world-class courses and expert guidance.</p>
+    <div style="background color:red">
+    <a href="{{ url_for('signup') }}" class="btn-primary">Sign Up Now</a></div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Mimz Academy. All rights reserved. | <a href="#" style = "color:white;">About Us</a> | <a href="#" style = "color:white;">Contact Us</a> | <a href="#" style = "color:white;">Privacy Policy</a></p>
+</footer>
+</body>
+</html>
