@@ -8,9 +8,11 @@ TABLE OF CONTENT
 3.  Technologies Used
 4.  Setup Instructions
 5.  Usage
-6.  Contributors
-7.  Author
-8.  Contact
+6.  Areas of improvement
+7.  Contributors
+8.  Author
+9.  Contact
+
 
 PROJECT OVERVIEW
 The Mimz Academy Student Management System is a web application designed to streamline the process of managing student admissions, registrations, and records. The system provides an efficient and user-friendly interface for school administrators to handle student data, improving overall administrative operations.
@@ -71,6 +73,13 @@ Admission Management:
         * PUT /students/<registration_number>: Update a student's details.
         * DELETE /students/<registration_number>: Delete a student.
 
+AREAS FROM IMPROVEMENT:
+1.  Frontend design
+2.  Admission Status on the admission db
+3.  Customized login for individual data base administrator
+4.  More sophisticated frameworks for both the frontend and backend
+5.  Admitted students to automatically be added into the student management database
+
 CONTRIBUTIONS:
 Contributions are welcome! Please follow these steps:
     1.  Fork the repository.
@@ -83,4 +92,4 @@ AUTHOR:
     [Miracle Obinna Okafor] <miracle.okafor14@gmail.com>
 
 CONTACT:
-    For questions or inquiries, please contact Your Name.
+    For questions or inquiries, please contact Me.

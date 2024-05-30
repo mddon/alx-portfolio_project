@@ -1,3 +1,35 @@
+"""
+Mimz Academy Student Management System
+
+This Flask application provides a web-based student management system for Mimz Academy. 
+It includes features for user authentication, student registration, admission management, 
+and student record management.
+
+Modules and Functions:
+    - create_connection: Establishes a connection to the 'students.db' SQLite database and initializes the students table.
+    - create_connection2: Establishes a connection to the 'prospective_students.db' SQLite database and initializes the prospective_students table.
+    - get_db: Retrieves a database connection from the Flask 'g' object.
+    - close_connection: Closes the database connection at the end of the request.
+
+Routes:
+    - /: Renders the index page.
+    - /login: Handles user login with form validation.
+    - /logout: Logs out the user by clearing the session.
+    - /student-manager: Renders the student manager page, accessible only to logged-in users.
+    - /signup: Handles the signup form for prospective students and inserts their data into the database.
+    - /signup_success: Renders the signup success page.
+    - /students: Manages student records (view, add, delete, update).
+    - /students/<int:registration_number>: Deletes or updates a specific student record.
+    - /admission: Renders the admission page displaying prospective students, accessible only to logged-in users.
+    - /services: Renders the services page.
+    - /about: Renders the about page.
+    - /contact: Renders the contact page.
+
+Author: Miracle Okafor <miracle.okafor14@gmail.com>
+Date: 30/05/2024
+
+"""
+
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, abort, g
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
@@ -11,6 +43,9 @@ users = {
 }
 
 def create_connection():
+    """
+    Establishes a connection to the 'students.db' SQLite database and initializes the students table.
+    """
     conn = None
     try:
         conn = sqlite3.connect('students.db')
@@ -25,6 +60,9 @@ def create_connection():
     return conn
 
 def create_connection2():
+    """
+    Establishes a connection to the 'prospective_students.db' SQLite database and initializes the prospective_students table.
+    """
     conn2 = None
     try:
         conn2 = sqlite3.connect('prospective_students.db')
@@ -43,6 +81,9 @@ def create_connection2():
     return conn2
 
 def get_db(db_name):
+    """
+    Retrieves a database connection from the Flask 'g' object.
+    """
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = sqlite3.connect(db_name)
@@ -50,16 +91,25 @@ def get_db(db_name):
 
 @app.teardown_appcontext
 def close_connection(exception):
+    """
+    Closes the database connection at the end of the request.
+    """
     db = getattr(g, '_database', None)
     if db is not None:
         db.close()
 
 @app.route('/')
 def index():
+    """
+    Renders the index page.
+    """
     return render_template('index.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """
+    Handles user login with form validation.
+    """
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -72,17 +122,26 @@ def login():
 
 @app.route('/logout')
 def logout():
+    """
+    Logs out the user by clearing the session.
+    """
     session.pop('username', None)
     return redirect(url_for('index'))
 
 @app.route('/student-manager')
 def student_manager():
+    """
+    Renders the student manager page, accessible only to logged-in users.
+    """
     if 'username' not in session:
         return redirect(url_for('login'))
     return render_template('student-manager.html')
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    """
+    Handles the signup form for prospective students and inserts their data into the database.
+    """
     if request.method == 'POST':
         surname = request.form['surname']
         other_names = request.form['other_names']
@@ -106,10 +165,16 @@ def signup():
 
 @app.route('/signup_success')
 def signup_success():
+    """
+    Renders the signup success page.
+    """
     return render_template('signup_success.html')
 
 @app.route('/students', methods=['GET', 'POST'])
 def manage_students():
+    """
+    Manages student records (view, add, delete, update).
+    """
     if 'username' not in session:
         abort(401)
     
@@ -141,6 +206,9 @@ def manage_students():
 
 @app.route('/students/<int:registration_number>', methods=['DELETE'])
 def delete_student(registration_number):
+    """
+    Deletes a specific student record.
+    """
     if 'username' not in session:
         abort(401)
     
@@ -157,6 +225,9 @@ def delete_student(registration_number):
 
 @app.route('/students/<int:registration_number>', methods=['PUT'])
 def update_student(registration_number):
+    """
+    Updates a specific student record.
+    """
     if 'username' not in session:
         abort(401)
     
@@ -181,6 +252,9 @@ def update_student(registration_number):
 
 @app.route('/admission')
 def admission():
+    """
+    Renders the admission page displaying prospective students, accessible only to logged-in users.
+    """
     if 'username' not in session:
         return redirect(url_for('login'))
     
@@ -194,14 +268,23 @@ def admission():
 
 @app.route('/services')
 def services():
+    """
+    Renders the services page.
+    """
     return render_template('services.html')
 
 @app.route('/about')
 def about():
+    """
+    Renders the about page.
+    """
     return render_template('about.html')
 
 @app.route('/contact')
 def contact():
+    """
+    Renders the contact page.
+    """
     return render_template('contact.html')
 
 
