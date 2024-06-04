@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Home-Mimz Academy{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <style>
-    </style>
 </head>
 <body>
     <header class="header-contact">
@@ -19,24 +17,30 @@
         </div>
     </header>
     <nav>
-        <a href="{{ url_for('index') }}">Home</a>
-        <a href="{{ url_for("about") }}">About</a>
-        <a href="{{ url_for('services') }}">Services</a>        
-        <a href="{{ url_for('contact') }}">Contact</a>
-        <a href="{{ url_for('signup') }}" target="_blank">Sign-up</a>
-        {% if 'username' in session %}
-            <a href="{{ url_for('admission') }}">Admission</a>
-            <a href="{{ url_for('student_manager') }}">Student Manager</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
-        {% else %}
-            <a href="{{ url_for('login') }}">Admin</a>
-        {% endif %}
+        <div class="nav-container">
+            <img src="{{ url_for('static', filename='images/image logo_png.png') }}" alt="Mimz Academy Logo" class="logo">
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <div class="nav-links" id="navLinks">
+                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('about') }}">About</a>
+                <a href="{{ url_for('services') }}">Services</a>
+                <a href="{{ url_for('contact') }}">Contact</a>
+                <a href="{{ url_for('signup') }}" target="_blank">Sign-up</a>
+                {% if 'username' in session %}
+                    <a href="{{ url_for('admission') }}">Admission</a>
+                    <a href="{{ url_for('student_manager') }}">Student Manager</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">Admin</a>
+                {% endif %}
+            </div>
+        </div>
     </nav>
 <section class="hero">
     <div class="hero-content">
         <h1>Welcome to Mimz Academy</h1>
         <p>Empowering Minds, Building Futures...</p>
-        <a href="{{ url_for('signup') }}" class="btn-primary">Get Started</a>
+        <a href="{{ url_for('signup') }}" target="_blank" class="btn-primary">Get Started</a>
     </div>
 </section>
 
@@ -105,7 +109,7 @@
 </section>
 
 <footer>
-    <p>&copy; 2024 Mimz Academy. All rights reserved. | <a href="#" style = "color:white;">About Us</a> | <a href="#" style = "color:white;">Contact Us</a> | <a href="#" style = "color:white;">Privacy Policy</a></p>
+    <p>&copy; 2024 Mimz Academy. All rights reserved. | <a href="{{ url_for('about') }}" class="footer-link">About Us</a> | <a href="{{ url_for('contact') }}" class="footer-link">Contact Us</a> |  <a href="#">Privacy Policy</a></p>
 </footer>
 </body>
 </html>

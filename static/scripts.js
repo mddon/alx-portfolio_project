@@ -104,3 +104,15 @@ function editStudent(regNo) {
 }
 
 fetchStudents();
+
+function toggleMenu() {
+    var navLinks = document.getElementById("navLinks");
+    var menuIcon = document.querySelector(".menu-icon");
+    if (navLinks.style.display === "block") {
+        navLinks.style.display = "none";
+        menuIcon.classList.remove("active");
+    } else {
+        navLinks.style.display = "block";
+        menuIcon.classList.add("active");
+    }
+}

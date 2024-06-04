@@ -12,12 +12,17 @@
 </head>
 <body>
     <header>
-        <h1>Mimz Academy</h1>
-        <p>Empowering Minds, Building Futures</p>
+        <div class="header-content">
+            <img src="{{ url_for('static', filename='./images/image logo_png.png') }}" alt="Mimz Academy Logo" class="logo">
+            <div class="header-text">
+                <h1>Mimz Academy</h1>
+                <p>Empowering Minds, Building Futures</p>
+            </div>
+        </div>
     </header>
     <nav>
         <a href="{{ url_for('index') }}">Home</a>
-        <a href="{{ url_for("about") }}">About</a>
+        <a href="{{ url_for('about') }}">About</a>
         <a href="{{ url_for('services') }}">Services</a>
         <a href="{{ url_for('contact') }}">Contact</a>
         <a href="{{ url_for('signup') }}" target="_blank">Sign-up</a>
@@ -33,7 +38,7 @@
         {% block content %}{% endblock %}
     </main>
     <footer>
-        <p>&copy; 2024 Mimz Academy. All rights reserved. | <a href="#" style = "color:white;">About Us</a> | <a href="#" style = "color:white;">Contact Us</a> | <a href="#" style = "color:white;">Privacy Policy</a></p>
+        <p>&copy; 2024 Mimz Academy. All rights reserved. | <a href="{{ url_for('about') }}" class="footer-link">About Us</a> | <a href="{{ url_for('contact') }}" class="footer-link">Contact Us</a> |  <a href="#">Privacy Policy</a></p>
     </footer>
 </body>
 </html>
