@@ -103,7 +103,6 @@ function editStudent(regNo) {
     .catch(error => displayError(`Error: ${error.message}`));
 }
 
-fetchStudents();
 
 function toggleMenu() {
     var navLinks = document.getElementById("navLinks");
@@ -116,3 +115,6 @@ function toggleMenu() {
         menuIcon.classList.add("active");
     }
 }
+
+
+fetchStudents();

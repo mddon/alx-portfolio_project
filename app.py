@@ -35,7 +35,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Change this to a random secret key for production
+app.secret_key = 'supersecretkey'
 
 # Dummy data for demonstration purposes
 users = {
@@ -287,6 +287,18 @@ def contact():
     """
     return render_template('contact.html')
 
+def init_db():
+    """
+    Initializes the databases and creates necessary tables if they do not exist.
+    """
+    conn1 = create_connection()
+    if conn1:
+        conn1.close()
+    
+    conn2 = create_connection2()
+    if conn2:
+        conn2.close()
 
 if __name__ == '__main__':
+    init_db()    
     app.run(debug=True)
